@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.progressBar {
+  height: 50px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.progress {
+  height: 50px;
+  background-color:lightcoral;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
