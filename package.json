@@ -6,7 +6,8 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-player": "^1.13.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "semantic-ui-css": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",

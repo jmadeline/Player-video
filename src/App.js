@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import './App.css';
+import 'semantic-ui-css/semantic.min.css';
 
 //https://www.youtube.com/watch?v=9zkwHIsiVoE
 
@@ -8,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      url: 'https://www.youtube.com/watch?v=9zkwHIsiVoE',
+      url: '',
       playing: false,
       muted: false,
       volume: 0.5,
@@ -57,21 +58,25 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <input type="text" onChange={this.handleChange} />
-          <ReactPlayer
-            ref={this.ref}
-            url={this.state.url}
-            playing={this.state.playing}
-            muted={this.state.muted}
-            volume={this.state.volume}
-            onProgress={this.handleProgress}
-          />
+          <label className="ui input">
+            <input type="text" placeholder="Insert video URL" onChange={this.handleChange} />
+          </label>
+          <div className="video">
+            <ReactPlayer
+              ref={this.ref}
+              url={this.state.url}
+              playing={this.state.playing}
+              muted={this.state.muted}
+              volume={this.state.volume}
+              onProgress={this.handleProgress}
+            />
+          </div>
           <div className="progressBar" onClick={this.changeProgress}><div className="progress" style={{ width: this.state.progress + "%" }}></div></div>
           <div className="buttons">
-            <button onClick={this.handlePlay}>Play / Pause</button>
-            <button onClick={this.handleMute}>Mute</button>
-            <button onClick={this.handleVolumeUP}>+</button>
-            <button onClick={this.handleVolumeDown}>-</button>
+            <button className="ui icon left labeled button" onClick={this.handlePlay}><i aria-hidden="true" className="pause icon"></i>Play</button>
+            <button className="ui button" onClick={this.handleMute}>Mute</button>
+            <button className="ui yellow inverted button" onClick={this.handleVolumeUP}>+</button>
+            <button className="ui yellow inverted button" onClick={this.handleVolumeDown}>-</button>
           </div>
         </header>
       </div>
